@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud System</title>
+    <link rel="shortcut icon" href="./images/pngaaa.com-662779.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main class="container">
+        <!-- ========== Start inputs ========== -->
+        <section class="bg-black text-white my-5 w-75 m-auto">
+            <div class=" my-4 p-3 color-shadow">
+                <h1 class="text-center">CRUD SYSTEM</h1>
+                <div class="form__group field my-4">
+                    <input type="text" id="ProductName" class="form__field" placeholder="ProductName" required="">
+                    <label for="ProductName" class="form__label">Product Name</label>
+                </div>
+                <div class="form__group field my-4">
+                    <input type="number" id="ProductPrice" class="form__field" placeholder="ProductPrice" required="">
+                    <label for="ProductPrice" class="form__label">Product Price</label>
+                </div>
+                <div class="form__group field my-4">
+                    <input type="text" id="ProductCategory" class="form__field" placeholder="ProductCategory" required="">
+                    <label for="ProductCategory" class="form__label">Product Category</label>
+                </div>
+                <div class="form__group field my-4">
+                    <textarea  class="form__field" id="ProductDescription" placeholder="ProductDescription" required=""></textarea>
+                    <label for="ProductDescription" class="form__label">Product Description</label>
+                </div>
+                <button class="btn btn-warning px-md-5 d-block my-4 m-auto" id="addBtn">Add Product</button>
+                <button class="btn btn-warning px-md-5 d-none my-4 m-auto" id="updateBtn">Update Product</button>
+            </div>
+            
+        </section>
+        <!-- ========== End inputs ========== -->
+
+
+        <!-- ========== Start search ========== -->
+        <section class=" d-flex justify-content-center align-items-center m-5 ">
+            <div class="input-wrapper">
+                <button class="icon"> 
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+                  </svg>
+                </button>
+                <input placeholder="search.." class="input " name="text" type="search" id="searchProduct">
+              </div>
+        </section>
+        <!-- ========== End search ========== -->
+
+
+        <!-- ========== Start table ========== -->
+        <section>
+            <table class="table table-dark table-striped text-center">
+                <thead>
+                    <tr>
+                        <th>Index</th>
+                        <th>Prodact Name</th>
+                        <th>Prodact price</th>
+                        <th>Prodact Category</th>
+                        <th>Prodact Description</th>
+                        <th>Action </th>
+                    </tr>
+                </thead>
+                <tbody  id="tableData">
+                    
+                    
+                </tbody>
+            </table>
+        </section>
+        <!-- ========== End table ========== -->
+    </main>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
