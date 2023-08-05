@@ -11,18 +11,39 @@ if (localStorage.getItem("products") != null) {
   displayData();
 }
 
+function isEmpty(){
+  if (
+    productNameInput.value == '' ||
+    ProductPriceInput.value == ''||
+    ProductCategoryInput.value == ''||
+    ProductDescriptionInput.value == ''
+  ){
+    return true
+  }
+  else{
+    return false
+  }
+}
+
 function addProduct() {
-  var product = {
-    name: productNameInput.value,
-    price: ProductPriceInput.value,
-    category: ProductCategoryInput.value,
-    desc: ProductDescriptionInput.value,
-  };
-  productContainer.push(product);
-  console.log(productContainer);
-  localStorage.setItem("products", JSON.stringify(productContainer));
-  displayData();
-  clearData();
+  if(isEmpty){
+    document.getElementById("alert").innerHTML =
+      '<span class="text-danger m-3">All inputs is required</span>';
+  }
+  else{
+    var product = {
+      name: productNameInput.value,
+      price: ProductPriceInput.value,
+      category: ProductCategoryInput.value,
+      desc: ProductDescriptionInput.value,
+    };
+    productContainer.push(product);
+    console.log(productContainer);
+    localStorage.setItem("products", JSON.stringify(productContainer));
+    displayData();
+    clearData();
+  }
+  
 }
 function clearData() {
   productNameInput.value = "";
