@@ -11,26 +11,27 @@ if (localStorage.getItem("products") != null) {
   displayData();
 }
 
-function isEmpty(){
+function isEmpty() {
   if (
-    productNameInput.value == '' ||
-    ProductPriceInput.value == ''||
-    ProductCategoryInput.value == ''||
-    ProductDescriptionInput.value == ''
-  ){
-    return true
-  }
-  else{
-    return false
+    productNameInput.value == "" ||
+    ProductPriceInput.value == "" ||
+    ProductCategoryInput.value == "" ||
+    ProductDescriptionInput.value == ""
+  ) {
+    return false;
+  } else {
+    return true;
   }
 }
 
 function addProduct() {
-  if(isEmpty){
-    document.getElementById("alert").innerHTML =
-      '<span class="text-danger m-3">All inputs is required</span>';
-  }
-  else{
+  if (isEmpty() == false) {
+    document.getElementById("alert").classList.add("d-block");
+    document.getElementById("alert").classList.remove("d-none");
+  } else {
+    document.getElementById("alert").classList.remove("d-block");
+    document.getElementById("alert").classList.add("d-none");
+
     var product = {
       name: productNameInput.value,
       price: ProductPriceInput.value,
@@ -43,7 +44,6 @@ function addProduct() {
     displayData();
     clearData();
   }
-  
 }
 function clearData() {
   productNameInput.value = "";
